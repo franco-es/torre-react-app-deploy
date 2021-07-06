@@ -36,8 +36,23 @@
     transform: rotate(360deg);
   }
 }
-
-
-.color_white {
-  color: #fff;
+.bg_img{
+  padding:0px;
+  height:100%;
+  width: 100%;
+  position:absolute;
+  background-image: url(./assets/img/torre_Logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
+.box{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.WelcomeText{
+  padding-top: 8rem;
+}
+

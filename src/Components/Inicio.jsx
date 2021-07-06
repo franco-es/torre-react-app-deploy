@@ -1,12 +1,17 @@
 import React from "react";
 
+import logo from "../assets/img/torre_Logo.png";
+
 const Inicio = () => {
   return (
-    <div className="">
-      <div className="d-flex">
-        <h1 className="justify-contet-center">Bienvenido</h1>
-      </div>
-    </div>
+    <>
+      <section className="bg_img">
+        <div className="box">
+          <h1
+          className="WelcomeText">Welcome</h1>
+        </div>
+      </section>
+    </>
   );
 };
 
