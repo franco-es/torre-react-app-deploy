@@ -34,29 +34,41 @@ const MyGenome = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  const hideCard = (e) => {
+    e.preventDefault();
+    setUsername("");
+    setShowCard(false);
+  };
   return (
     <>
       <div className="box">
-        <Form className="form-username">
+        <Form className="form-username mb-5">
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Username</Form.Label>
             <Form.Control
               type="text"
               placeholder="Username"
+              value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
           </Form.Group>
-          <button className="btn btn-primary" onClick={(e) => axiosProfile(e)}>
-            {showCard === true ? (
-              <i class="fas fa-search">Clear</i>
-            ) : (
+          {showCard === false ? (
+            <button
+              className="btn btn-primary"
+              onClick={(e) => axiosProfile(e)}
+            >
               <i class="fas fa-search">Search Profile</i>
-            )}
-          </button>
+            </button>
+          ) : (
+            <button className="btn btn-primary" onClick={(e) => hideCard(e)}>
+              <i class="fas fa-search">Clear</i>
+            </button>
+          )}
         </Form>
       </div>
       {showCard === true ? (
-        <Card className="mt-5 mx-4">
+        <Card className="mx-4 ProfileCard">
           <Card.Header className="profileName">
             {name} <img src={userImg} alt="" />
           </Card.Header>
