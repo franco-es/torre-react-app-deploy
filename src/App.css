@@ -44,6 +44,8 @@
   background-image: url(./assets/img/torre_Logo.png);
   background-repeat: no-repeat;
   background-position: center;
+  animation-name: opacity;
+  animation-duration: 2s;
 }
 
 .box{
@@ -53,6 +55,28 @@
 }
 
 .WelcomeText{
+  color: #000;
   padding-top: 8rem;
+
+}
+
+
+.form-username{
+  width: 20rem;
+  animation-name: opacity;
+  animation-duration: 1s;
+}
+
+.profileName{
+  font-size: 2rem
+}
+
+@keyframes opacity{
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
 
