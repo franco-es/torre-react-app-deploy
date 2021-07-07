@@ -49,6 +49,10 @@
   animation-duration: 2s;
 }
 
+.borderRadius-1{
+  border-radius: .5em;
+}
+
 .box{
   display: flex;
   align-items: center;
@@ -92,6 +96,9 @@
   margin-top: 2.5px !important;
   margin-bottom: 2.5px !important;
 }
+.tablePersonality{
+  width: 100%;
+}
 
 .shadowStrength{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
@@ -101,6 +108,9 @@
 
 .strengthsHover:hover{
   background-color: #6e9eeb;
+}
+.align-left{
+  align-items: left;
 }
 
 
