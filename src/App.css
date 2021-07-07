@@ -1,4 +1,5 @@
 .App {
+  background-color: #a6a6ab;
   text-align: center;
 }
 
@@ -63,11 +64,9 @@
 
 .form-username{
   width: 20rem;
-  animation-name: opacity;
-  animation-duration: 1s;
 }
 
-.ProfileCard{
+.ProfileCard, .form-username{
   animation: 1.5s linear  bottomTopOpacity
 }
 

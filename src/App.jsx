@@ -5,10 +5,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavigationBar from "./Components/NavigationBar";
 import Inicio from "./Components/Inicio";
 import MyGenome from "./Components/genome/MyGenome";
+import JobsPeople from "./Components/JobsPeople";
 
 function App() {
   return (
-    <Router>
+    <Router className="App">
       <NavigationBar />
       <Switch>
         <Route path="/" exact>
@@ -18,7 +19,7 @@ function App() {
           <MyGenome />
         </Route>
         <Route path="/jobsPeople">
-          <Inicio />
+          <JobsPeople />
         </Route>
       </Switch>
     </Router>
