@@ -4,7 +4,7 @@ export default function getPeople() {
   return new Promise((resolve, reject) => {
     axios
       .post(
-        "https://torre-back-end.herokuapp.com/api/people?size=10&aggregate=false&offset=10",
+        "https://torre-back-end.herokuapp.com/api/people?size=10&aggregate=false&offset=0",
         null,
         {
           headers: {
