@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Torre Front-end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Front-End make it in React. consume API
 
-## Available Scripts
+- Included personal LOG in the ROADMAP.
 
-In the project directory, you can run:
+## Roadmap
 
-### `npm start`
+- Tuesday 2021 july 6 at 00:30 AM : start of make the torre_back_end
+- Tuesday 2021 july 6 at 01:30 AM : get done with user route and controller to be consumed by frontend
+- Tuesday 2021 july 6 at 02:24 AM : create jobs controller and route to be consumed by frontend, still needs to be tested
+- Tuesday 2021 july 6 at 02:34 AM : go to sleep
+- Tuesday 2021 july 6 at 11:30 AM : arrive to workspace and start
+- Tuesday 2021 july 6 at 12:30 PM : modify controllers and routes, also creacte controller for jobs and route.
+- Tuesday 2021 july 6 at 12:40 PM : create torre_front_end in react. almost all routes are working.
+- Tuesday 2021 july 6 at 13:00 PM : go to lunch
+- Tuesday 2021 july 6 at 14:00 PM : create start, genome, jobs and people components
+- Tuesday 2021 july 6 at 14:30 PM : create start screen and give animations
+- Tuesday 2021 july 6 at 14:50 PM : use axios to comunicate with API
+- Tuesday 2021 july 6 at 15:30 PM : start to put data on genome screen and give animations
+- Tuesday 2021 july 6 at 17:00 PM : start to have problems with CORS pollicy
+- Tuesday 2021 july 6 at 20:00 PM : still with CORS policy
+- Wednesday 2021 july 6 at 23:00 PM : solving the CORS policy proble, bug was a bad header sent.
+- Wednesday 2021 july 7 at 01:00 AM : change animations on profile card, give bottom to top and dissapier animation
+- Wednesday 2021 july 7 at 09:00 AM : start day - continue with genome screen
+- Wednesday 2021 july 7 at 13:00 PM : go to lunch
+- Wednesday 2021 july 7 at 14:00 PM : finish genome screen
+- Wednesday 2021 july 7 at 14:45 PM : start jobs and people components
+- Wednesday 2021 july 7 at 15:00 PM : make call to API
+- Wednesday 2021 july 7 at 18:45 PM : continue with jobs and people component putting info on screen and give animations
+- Wednesday 2021 july 7 at 19:00 PM : save interets from genome to compare with jobs and people component
+- Thursday 2021 july 8 at 09:15 AM : silling the components
+- Thursday 2021 july 8 at 10:00 AM : finish jobs and people component
+- Thursday 2021 july 8 at 11:00 AM : finish animation for application
+- Thursday 2021 july 8 at 12:00 AM : finish project.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Feedback
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you have any feedback, please reach out to us at francoestrella55@gmail.com
