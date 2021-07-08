@@ -5,7 +5,7 @@ import Table from "react-bootstrap/Table";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-// import Col from "react-bootstrap/Col";
+import Spinner from "react-bootstrap/Spinner";
 
 // OWN IMPORTS
 import getJobs from "../services/getJobs";
@@ -16,6 +16,7 @@ const List = (props) => {
   const [jobsArray, setJobsArray] = useState([]);
   const [peopleArray, setPeopleArray] = useState([]);
   const [minAmaunt, setMinAmaunt] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (name === "jobs") {
@@ -29,6 +30,7 @@ const List = (props) => {
   const getJobsList = async () => {
     console.log("axios de " + name);
     await getJobs().then((jobs) => {
+      setLoading(false);
       setJobsArray(jobs);
     });
   };
@@ -36,6 +38,7 @@ const List = (props) => {
   const getPeopleList = async () => {
     console.log("axios de " + name);
     await getPeople().then((people) => {
+      setLoading(false);
       setPeopleArray(people);
     });
   };
@@ -44,8 +47,11 @@ const List = (props) => {
     <>
       {name === "jobs" ? (
         <>
+          {loading ? (
+            <Spinner animation="border" variant="success" className="box" />
+          ) : null}
           {jobsArray.map((job) => (
-            <Card className="shadowStrength mx-3 mb-3 bg_row">
+            <Card className="shadowStrength mx-3 mb-3 bg_row leftSideAnimation">
               <Card.Body>
                 <>
                   <Row key={job.id} className="h-3-5">
@@ -95,8 +101,11 @@ const List = (props) => {
         </>
       ) : (
         <>
+          {loading ? (
+            <Spinner animation="border" variant="success" className="box" />
+          ) : null}
           {peopleArray.map((person) => (
-            <Card className="shadowStrength mx-3 mb-3 bg_row">
+            <Card className="shadowStrength mx-3 mb-3 bg_row leftSideAnimation">
               <Card.Body>
                 <>
                   <Row key={person.id}>

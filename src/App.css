@@ -1,3 +1,5 @@
+
+
 .App {
   background-color: #a6a6ab;
   text-align: center;
@@ -91,6 +93,10 @@ hr{
   animation: 1.5s linear  bottomTopOpacity
 }
 
+.leftSideAnimation{
+  animation: 1.5s linear bottomLeftOpacity;
+}
+
 .profileName{
   font-size: 2rem
 }
@@ -153,7 +159,7 @@ hr{
 
 @keyframes bottomTopOpacity{
   0%{
-    margin-top: 3rem;
+    margin-left: 3rem;
     opacity: 0;
   }
   20%{
@@ -177,3 +183,33 @@ hr{
   }
 }
 
+@keyframes bottomLeftOpacity {
+  0% {
+    margin-left: 3rem;
+    opacity: 0;
+  }
+
+  20% {
+    margin-top: 2.4rem;
+    opacity: 0.2;
+  }
+
+  40% {
+    margin-top: 1.8rem;
+    opacity: 0.4;
+  }
+
+  60% {
+    margin-top: 1.2rem;
+    opacity: 0.6;
+  }
+
+  80% {
+    margin-top: 0.6rem;
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
