@@ -9,7 +9,7 @@ import Nav from "react-bootstrap/Nav";
 const NavigationBar = () => {
   return (
     <>
-      <Navbar>
+      <Navbar className="bg_row">
         <Container>
           <Link to="/" className="navbar-brand ">
             Torre

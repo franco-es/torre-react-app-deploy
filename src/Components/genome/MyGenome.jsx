@@ -39,7 +39,7 @@ const MyGenome = () => {
         setLocation(res.person.location.shortName);
         setProfession(res.person.professionalHeadline);
         setInterests(res.interests);
-        saveInterests(interests);
+        // saveInterests(interests);
         setLanguages(res.languages);
         setPersonality(res.personalityTraitsResults);
         setShowCard(true);
@@ -47,22 +47,22 @@ const MyGenome = () => {
       .catch((err) => console.log(err));
   };
 
-  const saveInterests = async (interests) => {
-    console.log(interests);
-    let interesSave = {};
-    const SavedInterests = [];
-    interests.forEach((interest) => {
-      interesSave = {
-        id: interest.id,
-        code: interest.code,
-        name: interest.name,
-        media: interest.media,
-        created: interest.created,
-      };
-      SavedInterests.push(...interesSave);
-    });
-    console.log(SavedInterests);
-  };
+  // const saveInterests = async (interests) => {
+  //   console.log(interests);
+  //   let interesSave = {};
+  //   const SavedInterests = [];
+  //   interests.forEach((interest) => {
+  //     interesSave = {
+  //       id: interest.id,
+  //       code: interest.code,
+  //       name: interest.name,
+  //       media: interest.media,
+  //       created: interest.created,
+  //     };
+  //     SavedInterests.push(...interesSave);
+  //   });
+  //   console.log(SavedInterests);
+  // };
 
   const hideCard = (e) => {
     e.preventDefault();
@@ -70,9 +70,9 @@ const MyGenome = () => {
     setShowCard(false);
   };
   return (
-    <>
+    <div className="bg_row">
       <div className="box">
-        <Form className="form-username mb-5 px-4 py-4 shadowStrength borderRadius-1 mt-sm-5">
+        <Form className=" bg_white form-username mb-5 px-4 py-4 shadowStrength borderRadius-1 mt-sm-5">
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Username</Form.Label>
             <Form.Control
@@ -87,11 +87,11 @@ const MyGenome = () => {
               className="btn btn-primary"
               onClick={(e) => axiosProfile(e)}
             >
-              <i class="fas fa-search">Search Profile</i>
+              <i class="fas fa-search"></i> Search Profile
             </button>
           ) : (
             <button className="btn btn-primary" onClick={(e) => hideCard(e)}>
-              <i class="fas fa-search">Clear</i>
+              <i class="fas fa-times"></i> Clear
             </button>
           )}
         </Form>
@@ -101,7 +101,7 @@ const MyGenome = () => {
       ) : null}
 
       {showCard === true ? (
-        <Card className="mx-4 ProfileCard shadowStrength">
+        <Card className="mx-4 ProfileCard shadowStrength mb-5">
           <Card.Header className="profileName">{name}</Card.Header>
           <Card.Body>
             <Card.Title>{profession}</Card.Title>
@@ -219,7 +219,7 @@ const MyGenome = () => {
           </Card.Body>
         </Card>
       ) : null}
-    </>
+    </div>
   );
 };
 

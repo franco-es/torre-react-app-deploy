@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
+// import Col from "react-bootstrap/Col";
 
 // OWN IMPORTS
 import getJobs from "../services/getJobs";
@@ -40,98 +42,90 @@ const List = (props) => {
 
   return (
     <>
-      <div className="box"></div>
-      <Table>
-        <thead>
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        {name === "jobs" ? (
-          <tbody>
-            {jobsArray.map((job) => (
-              <>
-                <tr key={job.id}>
-                  <td>
-                    <Row>
-                      <Col md={8}>{job.objective}</Col>
-                      <Col md={4}>{job.type}</Col>
-                    </Row>
-                    <hr />
-                    <Row>
-                      <Col>
+      {name === "jobs" ? (
+        <>
+          {jobsArray.map((job) => (
+            <Card className="shadowStrength mx-3 mb-3 bg_row">
+              <Card.Body>
+                <>
+                  <Row key={job.id} className="h-3-5">
+                    <Col md={8}>{job.objective}</Col>
+                    <Col md={4}>{job.type}</Col>
+                  </Row>
+                  <hr />
+                  <Row>
+                    <Col>
+                      <h6>Skills</h6>
+                      {job.skills.slice(0, 2).map((skill) => (
                         <ul>
-                          <li>min: </li>
-                          <li>max:</li>
-                          <li></li>
+                          <li>
+                            <b>Skill:</b> {skill.name}
+                          </li>
+                          <li>
+                            <b>Experience:</b>
+                            {skill.experience.replace("-", " ")}
+                          </li>
+                          <hr />
                         </ul>
-                      </Col>
-                      <Col>
-                        {job.skills.slice(0, 2).map((skill) => (
+                      ))}
+                    </Col>
+                    <Col>
+                      <h6>Members</h6>
+                      {job.members.slice(0, 2).map((member) => (
+                        <>
                           <ul>
                             <li>
-                              <b>Skill:</b> {skill.name}
+                              <b>Name: </b>
+                              {member.name}
                             </li>
                             <li>
-                              <b>Experience:</b>
-                              {skill.experience.replace("-", " ")}
+                              <b>job: </b>
+                              {member.professionalHeadline}
                             </li>
-                            <hr />
                           </ul>
-                        ))}
-                      </Col>
-                      <Col>
-                        {job.members.slice(0, 2).map((member) => (
-                          <>
-                            <ul>
-                              <li>
-                                <b>Name: </b>
-                                {member.name}
-                              </li>
-                              <li>
-                                <b>job: </b>
-                                {member.professionalHeadline}
-                              </li>
-                            </ul>
-                            <hr />
-                          </>
-                        ))}
-                      </Col>
-                    </Row>
-                  </td>
-                </tr>
-              </>
-            ))}
-          </tbody>
-        ) : (
-          <tbody>
-            {peopleArray.map((person) => (
-              <>
-                <tr key={person.id}>
-                  <td>
-                    <Row>
-                      <Col md={8}>
-                        {person.name}{" "}
-                        {person.verified === true ? (
-                          <i className="fas fa-user-check"></i>
-                        ) : null}
-                      </Col>
-                      <Col md={4}>{person.professionalHeadline}</Col>
-                    </Row>
-                    <hr />
-                    <Row>
-                      <Col>
-                        <ul>
+                          <hr />
+                        </>
+                      ))}
+                    </Col>
+                  </Row>
+                </>
+              </Card.Body>
+            </Card>
+          ))}
+        </>
+      ) : (
+        <>
+          {peopleArray.map((person) => (
+            <Card className="shadowStrength mx-3 mb-3 bg_row">
+              <Card.Body>
+                <>
+                  <Row key={person.id}>
+                    <Col md={8} className="h-3-5">
+                      {person.name}{" "}
+                      {person.verified === true ? (
+                        <i className="fas fa-user-check"></i>
+                      ) : null}
+                    </Col>
+                    <Col md={4}>{person.professionalHeadline}</Col>
+                  </Row>
+                  <hr />
+                  <Row>
+                    <Col>
+                      <ul>
+                        <h6>
                           <b>Open To:</b>
-                          {person.openTo.map((item) => (
-                            <li>{item}</li>
-                          ))}
-                        </ul>
-                      </Col>
-                      <Col>
-                        {person.skills.slice(0, 3).map((skill) => (
+                        </h6>
+                        {person.openTo.map((item) => (
+                          <li>{item}</li>
+                        ))}
+                      </ul>
+                    </Col>
+                    <Col>
+                      {person.skills.slice(0, 3).map((skill) => (
+                        <>
+                          <h6>
+                            <b>Skills:</b>
+                          </h6>
                           <ul>
                             <li>
                               <b>Skill:</b> {skill.name}
@@ -144,33 +138,16 @@ const List = (props) => {
                             </li>
                             <hr />
                           </ul>
-                        ))}
-                      </Col>
-                      <Col>
-                        {/* {people.members.slice(0, 2).map((member) => (
-                          <>
-                            <ul>
-                              <li>
-                                <b>Name: </b>
-                                {member.name}
-                              </li>
-                              <li>
-                                <b>job: </b>
-                                {member.professionalHeadline}
-                              </li>
-                            </ul>
-                            <hr />
-                          </>
-                        ))} */}
-                      </Col>
-                    </Row>
-                  </td>
-                </tr>
-              </>
-            ))}
-          </tbody>
-        )}
-      </Table>
+                        </>
+                      ))}
+                    </Col>
+                  </Row>
+                </>
+              </Card.Body>
+            </Card>
+          ))}
+        </>
+      )}
     </>
   );
 };
