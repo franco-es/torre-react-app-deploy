@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import Table from "react-bootstrap/Table";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import ListGroup from "react-bootstrap/ListGroup";
+import Spinner from "react-bootstrap/Spinner";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
@@ -18,6 +19,7 @@ import getUser from "../../services/getUser";
 const MyGenome = () => {
   const [username, setUsername] = useState("");
   const [showCard, setShowCard] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [profession, setProfession] = useState("");
   const [location, setLocation] = useState("");
@@ -28,19 +30,38 @@ const MyGenome = () => {
 
   const axiosProfile = async (e) => {
     e.preventDefault();
+    setLoading(true);
     await getUser(username)
       .then((res) => {
-        console.log(res);
+        setLoading(false);
         setStrenghts(res.strengths);
         setName(res.person.name);
         setLocation(res.person.location.shortName);
         setProfession(res.person.professionalHeadline);
         setInterests(res.interests);
+        saveInterests(interests);
         setLanguages(res.languages);
         setPersonality(res.personalityTraitsResults);
         setShowCard(true);
       })
       .catch((err) => console.log(err));
+  };
+
+  const saveInterests = async (interests) => {
+    console.log(interests);
+    let interesSave = {};
+    const SavedInterests = [];
+    interests.forEach((interest) => {
+      interesSave = {
+        id: interest.id,
+        code: interest.code,
+        name: interest.name,
+        media: interest.media,
+        created: interest.created,
+      };
+      SavedInterests.push(...interesSave);
+    });
+    console.log(SavedInterests);
   };
 
   const hideCard = (e) => {
@@ -75,6 +96,10 @@ const MyGenome = () => {
           )}
         </Form>
       </div>
+      {loading ? (
+        <Spinner animation="border" variant="success" className="box" />
+      ) : null}
+
       {showCard === true ? (
         <Card className="mx-4 ProfileCard shadowStrength">
           <Card.Header className="profileName">{name}</Card.Header>
@@ -106,7 +131,7 @@ const MyGenome = () => {
                       <Col
                         key={item.id}
                         xs={12}
-                        sm={12}
+                        sm={6}
                         md="auto"
                         className="border strengthsHover"
                       >
@@ -125,10 +150,10 @@ const MyGenome = () => {
                 <hr width="100%" />
                 <Card.Text className="box">
                   <Row className="boxStrengths">
-                    <Col className="align-left">
-                      <ListGroup horizontal className="mt-4">
+                    <ListGroup horizontal className="mt-4">
+                      <Col className="my-sm-2 ">
                         {languages.map((item) => (
-                          <ListGroup.Item>
+                          <ListGroup.Item className="align-left">
                             <ul key={item.code}>
                               <li>
                                 <b>Code:</b>
@@ -145,8 +170,8 @@ const MyGenome = () => {
                             </ul>
                           </ListGroup.Item>
                         ))}
-                      </ListGroup>
-                    </Col>
+                      </Col>
+                    </ListGroup>
                   </Row>
                 </Card.Text>
               </Col>
@@ -164,7 +189,7 @@ const MyGenome = () => {
                             <b>Name:</b>
                           </th>
                           <th colspan="12">
-                            <b>Score: 0-5</b>
+                            <b>Score: 0-4</b>
                           </th>
                         </tr>
                       </thead>
@@ -179,7 +204,7 @@ const MyGenome = () => {
                               <ProgressBar
                                 now={item.analysis}
                                 label={`${item.analysis}`}
-                                max={5}
+                                max={4}
                                 min={0}
                               />
                             </td>

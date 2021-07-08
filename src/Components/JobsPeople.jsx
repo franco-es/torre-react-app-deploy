@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Jobs from "./Jobs";
 import People from "./People";
 const JobsPeople = () => {
   return (
     <>
-      <h2>Jobs people component</h2>
+      <h2 className="box">Jobs & people</h2>
       <div className="row">
         <div className="col-6">
           <Jobs />
