@@ -1,4 +1,9 @@
 import React, { useEffect, useState } from "react";
+
+// BOOTSTRAP
+import Col from "react-bootstrap/Col";
+
+// OWN IMPORTS
 import Jobs from "./Jobs";
 import People from "./People";
 const JobsPeople = () => {
@@ -6,12 +11,12 @@ const JobsPeople = () => {
     <>
       <h2 className="box">Jobs & people</h2>
       <div className="row">
-        <div className="col-6">
+        <Col sm={12} md={6}>
           <Jobs />
-        </div>
-        <div className="col-6">
+        </Col>
+        <Col sm={12} md={6}>
           <People />
-        </div>
+        </Col>
       </div>
     </>
   );

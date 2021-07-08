@@ -6,8 +6,8 @@ const Jobs = () => {
 
   return (
     <>
-      <div>
-        <h3>Jobs component</h3>
+      <div className="box">
+        <h3>Jobs</h3>
       </div>
       <div>
         <List name={name} />

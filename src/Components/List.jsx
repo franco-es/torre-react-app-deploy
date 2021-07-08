@@ -40,9 +40,7 @@ const List = (props) => {
 
   return (
     <>
-      <div className="box">
-        <h3>list of {props.name}</h3>
-      </div>
+      <div className="box"></div>
       <Table>
         <thead>
           <tr>

@@ -6,8 +6,8 @@ const People = (props) => {
 
   return (
     <>
-      <div>
-        <h3>list Compoents</h3>
+      <div className="box">
+        <h3>People</h3>
       </div>
       <div>
         <List name={name} />
