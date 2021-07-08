@@ -64,12 +64,12 @@ const List = (props) => {
                       <h6>Skills</h6>
                       {job.skills.slice(0, 2).map((skill) => (
                         <ul>
-                          <li>
-                            <b>Skill:</b> {skill.name}
-                          </li>
+                          <li>{skill.name}</li>
                           <li>
                             <b>Experience:</b>
-                            {skill.experience.replace("-", " ")}
+                            {skill.experience
+                              .replace("-", " ")
+                              .replace("-", " ")}
                           </li>
                           <hr />
                         </ul>
@@ -136,9 +136,7 @@ const List = (props) => {
                             <b>Skills:</b>
                           </h6>
                           <ul>
-                            <li>
-                              <b>Skill:</b> {skill.name}
-                            </li>
+                            <li>{skill.name}</li>
                             <li>
                               <b>Experience: </b>
                               {Math.round(
